@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c5c5c5;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Custom animations */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.gradient-bg {
+  background: linear-gradient(-45deg, #31EC56, #EE72F8, #EF036C, #31EC56);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+}
+
+.glass-effect {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Custom button styles */
+.btn-primary {
+  @apply bg-malachite hover:bg-malachite-dark text-white font-bold py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-malachite/30;
+}
+
+.btn-secondary {
+  @apply bg-heliotrope hover:bg-heliotrope-dark text-white font-bold py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-heliotrope/30;
+}
+
+.btn-danger {
+  @apply bg-razzmatazz hover:bg-razzmatazz-dark text-white font-bold py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-razzmatazz/30;
+}
+
+/* Custom card styles */
+.card {
+  @apply bg-white rounded-2xl shadow-xl overflow-hidden transition-all duration-300 hover:shadow-2xl;
+}
+
+/* Form styles */
+.form-input {
+  @apply w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-malachite focus:border-transparent transition-all duration-300;
+}
+
+/* Navigation styles */
+.nav-link {
+  @apply text-gray-700 hover:text-razzmatazz px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300;
+}
+
+/* Dashboard elements */
+.stat-card {
+  @apply bg-gradient-to-br from-malachite/20 to-heliotrope/20 p-6 rounded-2xl border border-white/30 shadow-lg;
+}
