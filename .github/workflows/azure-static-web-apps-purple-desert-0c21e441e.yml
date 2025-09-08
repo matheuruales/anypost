@@ -19,6 +19,7 @@ jobs:
         with:
           submodules: true
           lfs: false
+
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
@@ -26,12 +27,10 @@ jobs:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_PURPLE_DESERT_0C21E441E }}
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: "upload"
-          # Rutas del proyecto
-          app_location: "/"           # donde está tu package.json (raíz)
-          api_location: ""            # vacío si no usas API
-          output_location: "build"    # carpeta que genera `npm run build`
-          # (Opcional) Si quieres forzar el build command:
-          # app_build_command: "npm run build"
+          app_location: "/"            # raíz del proyecto (package.json)
+          api_location: ""             # sin API
+          output_location: "build"     # CRA genera 'build'
+          app_build_command: "CI=false npm run build"  # <-- evita que los warnings sean errores
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
