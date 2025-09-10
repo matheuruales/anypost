@@ -7,24 +7,27 @@ export default {
   theme: {
     extend: {
       colors: {
-        'malachite': '#31EC56',
-        'razzmatazz': '#EF036C',
-        'heliotrope': '#EE72F8',
-        'malachite-dark': '#25C044',
-        'razzmatazz-dark': '#C40259',
-        'heliotrope-dark': '#D45AE0',
+        primary: {
+          bg: '#000000',
+          card: '#111111',
+          text: '#ffffff',
+          textSecondary: '#888888',
+          accent: '#0070f3',
+          border: '#333333',
+          hover: '#222222',
+        },
       },
       animation: {
+        'fade-in': 'fadeIn 0.5s ease-out',
         'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-        'float': 'float 6s ease-in-out infinite',
       },
-      keyframes: {
-        float: {
-          '0%, 100%': { transform: 'translateY(0)' },
-          '50%': { transform: 'translateY(-10px)' },
-        }
-      }
+      backdropBlur: {
+        xs: '2px',
+      },
+      boxShadow: {
+        glow: '0 0 20px rgba(0, 112, 243, 0.15)',
+      },
     },
   },
   plugins: [],
-}
+};
