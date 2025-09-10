@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "vite build",
+    "typecheck": "tsc --noEmit -p tsconfig.build.json",
     "preview": "vite preview",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0"
   },
@@ -17,6 +18,7 @@
     "react-router-dom": "^6.8.0"
   },
   "devDependencies": {
+    "@types/node": "^22.7.5",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
     "@typescript-eslint/eslint-plugin": "^5.57.0",
@@ -28,7 +30,8 @@
     "eslint-plugin-react-refresh": "^0.3.4",
     "postcss": "^8.5.6",
     "tailwindcss": "^3.4.17",
-    "typescript": "^4.9.5",
-    "vite": "^4.2.0"
+    "typescript": "^5.6.3",
+    "undici-types": "^6.19.8",
+    "vite": "^4.5.0"
   }
 }
